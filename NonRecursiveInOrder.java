@@ -1,5 +1,5 @@
 import java.util.*;
-
+/*
  class Node{
     int data;
     Node leftNode;
@@ -11,6 +11,7 @@ import java.util.*;
         this.rightNode = null;
     }
 }
+*/
 
 public class NonRecursiveInOrder {
     public static void main(String args[])
