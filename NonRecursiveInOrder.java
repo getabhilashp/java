@@ -1,5 +1,5 @@
 import java.util.*;
-/*
+
  class Node{
     int data;
     Node leftNode;
@@ -11,15 +11,15 @@ import java.util.*;
         this.rightNode = null;
     }
 }
-*/
-public class NonRecursivePreorder {
+
+public class NonRecursiveInOrder {
     public static void main(String args[])
     {
         Node root = null;
         Scanner sc =  new Scanner(System.in);
         while(true)
         {
-            System.out.println("Hi Welcome to Binary Search Tree // DS \n 1.ADD \n 2.Non Recursive Preorder\n 3.exit");
+            System.out.println("Hi Welcome to Binary Search Tree // DS \n 1.ADD \n 2.Non Recursive Inorder\n 3.exit");
             int n = sc.nextInt();
            if(n == 1 )
             {
@@ -28,7 +28,7 @@ public class NonRecursivePreorder {
             }
             else if( n == 2)
             {
-                retireval_preorder(root);
+                retireval_inorder(root);
             }
             else{
                     return;
@@ -86,7 +86,7 @@ public class NonRecursivePreorder {
         Node node =  new Node(data);
         return node;
     }
-    public static void retireval_preorder(Node root)
+    public static void retireval_inorder(Node root)
     {
         if( root == null)
         {
@@ -95,18 +95,24 @@ public class NonRecursivePreorder {
         else{
 
             Stack<Node> s = new Stack<Node>();
-            s.push(root);
-            
-            while(!s.isEmpty())
+            Node temp = root;
+            while(true)
             {
-                Node temp = s.pop();
-                while(temp!=null){
-                    System.out.println(temp.data);
-                    s.push(temp.rightNode);
-                    temp=temp.leftNode;
+                while(temp != null)
+                {              
+                  s.push(temp);
+                    temp = temp.leftNode;
+
                 }
-            }
+                
+                    if(s.isEmpty())
+                    break;
+                    temp = s.pop();
+                    System.out.print(temp.data + " ");
+                    temp = temp.rightNode;
+                
         }
+    }
 
     }
 }
