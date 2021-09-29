@@ -72,11 +72,11 @@ public static boolean findII(Node root, int data)
             }
             if( temp.leftNode != null)
             {
-                que.push(temp.leftNode);
+                que.add(temp.leftNode);
             }
             if( temp.rightNode != null)
             {
-                que.push(temp.rightNode);
+                que.add(temp.rightNode);
             }
 
            

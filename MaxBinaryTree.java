@@ -77,11 +77,11 @@ public static Node find_maxII(Node root)
             }
             if( temp.leftNode != null)
             {
-                que.push(temp.leftNode);
+                que.add(temp.leftNode);
             }
             if( temp.rightNode != null)
             {
-                que.push(temp.rightNode);
+                que.add(temp.rightNode);
             }
 
            
