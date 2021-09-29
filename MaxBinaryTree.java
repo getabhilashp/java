@@ -1,6 +1,8 @@
-//max value in binary tree
+//max value in binary tree with recursion and without recursion
 
 import java.util.*;
+
+import javax.lang.model.util.ElementScanner6;
 class MaxBinaryTree{
 public static void main(String args[]) {
     Node root = null;
@@ -14,6 +16,8 @@ public static void main(String args[]) {
          root.leftNode.rightNode.leftNode = newNode(2);
 
          System.out.println(find_max(root).data);
+         System.out.println(find_maxII(root).data);
+
 
     
          
@@ -52,6 +56,39 @@ public static void main(String args[]) {
             }
     }
     return Max;
+
+}
+
+public static Node find_maxII(Node root)
+{
+
+    Node Max = newNode(Integer.MIN_VALUE);
+   
+    if(root != null)
+    {
+        LinkedList<Node> que = new LinkedList<Node>();
+        que.add(root);
+        while( !que.isEmpty())
+        {
+            Node temp = que.pop();
+            if(temp.data > Max.data)
+            {
+                Max = temp;
+            }
+            if( temp.leftNode != null)
+            {
+                que.push(temp.leftNode);
+            }
+            if( temp.rightNode != null)
+            {
+                que.push(temp.rightNode);
+            }
+
+           
+        }
+       
+    }
+return Max;
 
 }
 }
