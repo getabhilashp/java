@@ -68,5 +68,17 @@ public class NextSibbling {
         }
        
     } 
+    public static void sibllingII( Node2 root)
+    {
+            if(root != null)
+                return ;
+            if(root.leftNode != null)
+               root.rightNode.nextSiblling = root.rightNode;
+            if(root.rightNode != null)
+                root.rightNode.nextSiblling = root.nextSiblling != null? root.nextSiblling.leftNode : null;
+            sibllingII(root.leftNode);
+            siblling(root.rightNode);
+                
+    }
 }
 
