@@ -1,5 +1,6 @@
 // Deleting in binary tree, just find last node and replace with node found.
 //Mirror nof binary tree 
+package Tree;
 
 import java.util.*;
 

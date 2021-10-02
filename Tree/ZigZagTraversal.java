@@ -1,3 +1,4 @@
+package Tree;
 // simple use pnly to stack 
 // even to try using queue and stack
 

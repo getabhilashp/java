@@ -1,5 +1,5 @@
 //max value in binary tree with recursion and without recursion
-
+package Tree;
 import java.util.*;
 
 class InsertingInBinaryTree{

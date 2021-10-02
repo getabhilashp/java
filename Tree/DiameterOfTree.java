@@ -1,4 +1,5 @@
   //line no 60 is prone to error if u use size 
+  package Tree;
   import java.util.*;
 
   class Node1 {
