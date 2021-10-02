@@ -4,8 +4,6 @@
 
 import java.util.*;
 public class ZigZagTraversal {
-
-
     public static void main(String args[]) {
         Node root = null;
         Scanner sc = new Scanner(System.in);
