@@ -28,30 +28,26 @@ public class IntervalProblemType2 {
     }
     public static int  no_of_room(int[] start,int[] finish)
     {
+        int[] startprefix =  new int[100];
+        int[] sum =  new int[100];
 
-        for( int i = 0; i < start.length; i++ )
+        for( int i =0 ; i < start.length; i++)
         {
-            for(int j = 0; j < start.length-1; j++ )
-            {
-                if( finish[j] >  finish[j+1] )
-                {
-                    int temp = finish[j];
-
-                    finish[j] = finish[j+1];
-                    finish[j+1] = temp;
-
-                     temp = start[j];
-                     start[j] = start[j+1];
-                     start[j+1] = temp;
-                }
-
-                
-            }
+            startprefix[start[i]]++;
+            startprefix[finish[i]]--;
         }
-        int classroom =0 ;
-
-
-
+        int max= 0;
+         sum[0] = startprefix[0];
+        for( int j = 1; j < 100; j++)
+        {
+            sum[j] = sum[j-1]+ startprefix[j];
+            
+        }
+        for( int j = 0; j < 100; j++)
+        {
+            max = Math.max( max, sum[j]);        
+        }
+        return max;
 
     }
     
