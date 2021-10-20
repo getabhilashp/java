@@ -7,4 +7,3 @@ public class MedianInMergeList {
 
     
 }
-3
